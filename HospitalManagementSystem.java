@@ -5,9 +5,12 @@ public class HospitalManagementSystem {
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         // Menambahkan beberapa pasien ke dalam binary tree
-        bt.addPatient(13477, "Figaro");
+        bt.addPatient(13477, "Figaro","Demam");
+        bt.addPatient(1111, "ade","sifilis");
+        bt.addPatient(2222, "mauludina","DBD");
+        bt.addPatient(3333, "mahen","Ghonorea");
 
-        Scanner scanner = new Scanner(System.in); 
+        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Pilih menu yang diinginkan:");
@@ -25,7 +28,9 @@ public class HospitalManagementSystem {
                 int patientId = scanner.nextInt();
                 System.out.print("Masukkan nama pasien: ");
                 String patientName = scanner.next();
-                bt.addPatient(patientId, patientName);
+                System.out.print("Masukkan nama penyakit: ");
+                String patientIllness = scanner.next();
+                bt.addPatient(patientId, patientName, patientIllness);
                 System.out.println("Pasien berhasil ditambahkan.");
             } 
             else if (menu == 2) {
