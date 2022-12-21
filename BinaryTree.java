@@ -4,20 +4,20 @@ class BinaryTree {
     Node root;
 
     // Method untuk menambahkan pasien ke dalam binary tree
-    public void addPatient(int patientId, String patientName) {
-        root = addPatientRecursive(root, patientId, patientName);
+    public void addPatient(int patientId, String patientName, String patientIllness) {
+        root = addPatientRecursive(root, patientId, patientName, patientIllness);
     }
 
     // Method rekursif untuk menambahkan pasien ke dalam binary tree
-    private Node addPatientRecursive(Node current, int patientId, String patientName) {
+    private Node addPatientRecursive(Node current, int patientId, String patientName, String patientIllness) {
         if (current == null) {
-            return new Node(patientId, patientName);
+            return new Node(patientId, patientName, patientIllness );
         }
 
         if (patientId < current.data) {
-            current.left = addPatientRecursive(current.left, patientId, patientName);
+            current.left = addPatientRecursive(current.left, patientId, patientName,patientIllness);
         } else if (patientId > current.data) {
-            current.right = addPatientRecursive(current.right, patientId, patientName);
+            current.right = addPatientRecursive(current.right, patientId, patientName,patientIllness);
         } else {
             // pasien sudah terdaftar, tidak perlu menambahkan kembali
             return current;
